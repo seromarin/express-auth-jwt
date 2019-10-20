@@ -3,7 +3,7 @@
 const express = require('express');
 
 const indexRouter = require(__dirname + '/routes/api');
-const loginRouter = require(__dirname + '/routes/api/login')
+const loginRouter = require(__dirname + '/routes/api/login');
 
 const app = express();
 
