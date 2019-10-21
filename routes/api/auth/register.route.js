@@ -2,16 +2,14 @@
 
 const express = require('express');
 
+const registerController = require('../../../controllers/auth/register.controller');
+
 // eslint-disable-next-line new-cap
 const registerRouter = express.Router();
 
-registerRouter.get('/', (req, res) =>
-  res.render('auth/register')
-);
+registerRouter.get('/', registerController.manageRegisterView);
 
-registerRouter.post('/', (req, res) =>
-  res.json({ message: 'Usuario creado' })
-);
+registerRouter.post('/', registerController.registerNewUser);
 
 module.exports = registerRouter;
 

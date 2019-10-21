@@ -2,6 +2,7 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 
 const indexRouter = require(path.join(__dirname, 'routes/api'));
@@ -12,6 +13,9 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// Cookies
+app.use(cookieParser());
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
