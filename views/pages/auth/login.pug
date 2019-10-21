@@ -2,4 +2,12 @@ extends ../../partials/base/layout.pug
 
 block content
   .container
-    p Yo soy el login
+    p Yo soy el register
+    form(action="/login", method="post")
+      .form-item
+        label Email
+        input(type="email", name="email")
+      .form-item
+        label Password
+        input(type="password", name="password")
+      button(type="submit") Login

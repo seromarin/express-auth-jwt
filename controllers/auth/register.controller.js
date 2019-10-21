@@ -19,13 +19,14 @@ function manageRegisterView(req, res) {
  * @param {*} res
  */
 function registerNewUser(req, res) {
-  // const { name, lastName, password, email } = req.body;
+  const { name, lastName, password, email } = req.body;
   // const newUser = new User({ name, lastName, password, email } = req.body);
   // newUser.register();
-  const jwtUser = jwt.sign({ foo: 'bar' }, 'shhhhh');
+  const jwtUser = jwt.sign({
+    email,
+    password,
+  }, 'abc');
   handleMessage.handleSuccessMessage('Usuario creado correctamente');
-  // res.redirect('/');
-  console.log('jwtUser :', jwtUser);
   res.cookie('name', jwtUser);
   res.redirect('/');
 }
